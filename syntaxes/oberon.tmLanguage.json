@@ -14,7 +14,72 @@
 			"patterns": [
 				{
 					"name": "keyword.control.oberon",
-					"match": "\\b(if|while|for|return)\\b"
+					"match": "\b(FOR|REPEAT|IF|ELSIF|UNTIL|WHILE|DO|ELSE|THEN|CASE|BY|RETURN|TO)\b"
+				},
+				{
+					"name": "keyword.operator.oberon",
+					"match": "\b(IS|DIV|MOD|OR|IN)\b"
+				},
+				{
+					"name": "keyword.other.oberon",
+					"match": "\b(IMPORT|BEGIN|TYPE|CONST|MODULE|VAR|PROCEDURE|END)\b"
+				},
+				{
+					"name": "storage.type.oberon",
+					"match": "\b(POINTER|RECORD|ARRAY|MAP|OF)\b"
+				},
+				{
+					"name": "constant.language.oberon",
+					"match": "\b(FALSE|NIL|TRUE)\b"
+				},
+				{
+					"name": "support.function.oberon",
+					"match": "\b(ABS|ASR|CHR|FLT|INC|LSL|NEW|ROR|ASSERT|DEC|EXCL|FLOOR|INCL|LEN|ODD|ORD|PACK|UNPK)\b"
+				},
+				{
+					"name": "support.type.oberon",
+					"match": "\b(CHAR|REAL|BYTE|INTEGER|SET|BOOLEAN)\b"
+				},
+				{
+					"name": "constant.numeric.oberon",
+					"match": "\b(([0-9][0-9A-F]*[H])|([0-9]+[.][0-9]*([ED][+-]?[0-9]+)?)|([0-9]+))\b"
+				},
+				{
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.oberon"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.oberon"
+						}
+					}
+				},
+				{
+					"name": "string.quoted",
+					"patterns": [
+						{
+							"name": "constant.character.escape.oberon",
+							"match": "\\([ntrf\\'\"]|([0-7]{3}))"
+						}
+					]
+				},
+				{
+					"name": "string.other.oberon",
+					"match": "\b([0-9][0-9A-F]+[X])\b"
+				},
+				{
+					"begin": "(*",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.oberon"
+						}
+					},
+					"end": "*)",
+					"name": "comment.block.oberon"
 				}
 			]
 		},
