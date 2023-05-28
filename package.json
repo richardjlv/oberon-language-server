@@ -1,0 +1,25 @@
+{
+  "name": "oberon-language-server",
+  "displayName": "Oberon Language Server",
+  "description": "Syntax Highlight and auto complete for oberon",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "oberon",
+      "aliases": ["Oberon", "oberon"],
+      "extensions": [".mod"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "oberon",
+      "scopeName": "source.mod",
+      "path": "./syntaxes/oberon.tmLanguage.json"
+    }]
+  }
+}
